@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Munwar Ali Shaik Portfolio" />
+  <meta name="keywords" content="Java Developer, SDET, Automation Testing, Portfolio" />
+  <meta name="author" content="Munwar Ali Shaik" />
+
+  <title>Munwar Ali Shaik | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+     }
+      html{
+      scroll-padding-top:90px;
+    }
+    a{
+    word-break:break-word;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #050816;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #38bdf8;
+      border-radius: 10px;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(5,8,22,0.65), rgba(5,8,22,0.96));
+      z-index: -1;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(5, 8, 22, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+  nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#38bdf8;
+  transition:0.3s;
+}
+nav a:hover::after{
+  width:100%;
+}
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+        position:relative;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 120px 20px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 140px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      animation: fadeUp 1s ease;
+    }
+
+    .subtitle {
+      color: #38bdf8;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typing {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #cbd5e1;
+      min-height: 36px;
+    }
+
+    .hero p {
+      margin-top: 25px;
+      color: #94a3b8;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn{
+  padding:14px 30px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.4s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+    .primary {
+      background: #38bdf8;
+      color: #020617;
+    }
+
+    .primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 24px rgba(56,189,248,0.7);
+    }
+
+    .outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      background: transparent;
+    }
+
+    .outline:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-5px);
+    }
+
+    .tech-stack {
+      color: #cbd5e1;
+      margin-top: 32px;
+      font-weight: 500;
+    }
+
+    .hero-image {
+      margin-top: 38px;
+    }
+
+    .hero-image img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 0 35px rgba(56,189,248,0.55);
+    }
+
+    .socials {
+      margin-top: 30px;
+    }
+
+    .socials a {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0 14px;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #38bdf8;
+      transform: translateY(-5px);
+    }
+
+    .section-title {
+      font-size: 3rem;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #94a3b8;
+      margin-top: 10px;
+      margin-bottom: 60px;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      /* transition: 0.35s; */
+      transition:0.4s ease;
+
+    }
+
+    .glass:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 28px rgba(56,189,248,0.25);
+    }
+
+    .about-grid,
+    .project-grid,
+    .cert-grid,
+    .services-grid,
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .about-card,
+    .project-content,
+    .cert,
+    .service,
+    .achievement,
+    .timeline-item {
+      padding: 32px;
+    }
+
+    .about-card h3,
+    .project h3,
+    .cert h3,
+    .service h3,
+    .achievement h3,
+    .timeline-item h3 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+    .achievement h3 i{
+  color:#38bdf8;
+  margin-right:10px;
+}
+.cert{
+  padding:35px;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  backdrop-filter:blur(14px);
+  transition:0.4s ease;
+}
+
+.cert:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px rgba(56,189,248,0.25);
+}
+
+    .about-card p,
+    .project p,
+    .cert p,
+    .service p,
+    .achievement p,
+    .timeline-item p {
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .stat h2 {
+      color: #38bdf8;
+      font-size: 3rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      padding: 25px;
+      text-align: center;
+      font-weight: 600;
+      transition: 0.35s;
+    }
+
+    .skill i {
+      font-size: 1.9rem;
+      color: #38bdf8;
+    }
+
+    .skill:hover {
+      transform: translateY(-10px);
+      border: 1px solid #38bdf8;
+      box-shadow: 0 0 20px rgba(56,189,248,0.2);
+    }
+
+    .project{
+  position:relative;
+}
+
+.project::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:25px;
+  background:linear-gradient(
+    135deg,
+    rgba(56,189,248,0.08),
+    transparent
+  );
+  opacity:0;
+  transition:0.4s;
+}
+
+.project:hover::before{
+  opacity:1;
+}
+
+    .tags {
+      margin-top: 20px;
+    }
+
+    .tags span {
+      display: inline-block;
+      margin: 5px;
+      padding: 7px 12px;
+      background: rgba(56,189,248,0.1);
+      color: #38bdf8;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .project-buttons {
+      margin-top: 25px;
+    }
+
+    .project-buttons a {
+      text-decoration: none;
+      margin-right: 14px;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .github-stats {
+      margin-top: 40px;
+      padding: 28px;
+      text-align: center;
+      border-radius: 22px;
+    }
+
+ .timeline{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  margin-top:40px;
+}
+
+.timeline-item{
+  padding:35px;
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+  .timeline{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .timeline{
+    grid-template-columns:1fr;
+  }
+
+}
+
+    .timeline-item span {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+.timeline-item:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(56,189,248,0.25);
+}
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-card {
+      max-width: 720px;
+      margin: auto;
+      padding: 50px;
+    }
+
+    .contact-card a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .contact p {
+      margin-top: 15px;
+      color: #cbd5e1;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 16px;
+      border: none;
+      outline: none;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-family: inherit;
+    }
+
+    .contact-form textarea {
+      resize: none;
+    }
+
+   footer{
+  text-align:center;
+  padding:40px 20px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,0.08);
+  font-size:14px;
+  line-height:1.8;
+}
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 1s;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cursor-glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+    .github-stats h2 {
+  color: #38bdf8;
+  margin-bottom: 28px;
+  font-size: 2rem;
+}
+
+.working-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.working-grid div {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(56,189,248,0.08);
+  color: #cbd5e1;
+  font-weight: 500;
+  border: 1px solid rgba(56,189,248,0.12);
+}
+
+.working-grid div::before {
+  content: "✓ ";
+  color: #38bdf8;
+  font-weight: 800;
+}
+.service h3{
+  color:#38bdf8;
+  margin-bottom:18px;
+  font-size:1.4rem;
+}
+.timeline-item h3 i{
+  color:#38bdf8;
+  margin-right:10px;
+}
+
+.service h3 i{
+  color:#38bdf8;
+  margin-right:10px;
+}
+
+.service p{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+.about-card h3{
+  color:#38bdf8;
+  margin-bottom:18px;
+  font-size:1.4rem;
+}
+
+.about-card h3 i{
+  margin-right:10px;
+  color:white;
+}
+
+
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .typing {
+        font-size: 1.1rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 80px 18px;
+      }
+
+      .contact-card,
+      .contact-form {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <canvas id="bg"></canvas>
+
+  <header>
+    <nav>
+      <div class="logo">Munwar's Portfolio</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content reveal">
+      <p class="subtitle">MCA Graduate • Java Developer • Automation Testing</p>
+
+      <h1>
+        Hi, I'm <span class="gradient">Munwar Ali Shaik</span>
+      </h1>
+
+      <div class="typing">
+        <span id="typed"></span>
+      </div>
+
+      <p>
+        MCA graduate with hands-on knowledge in Java, SQL, Selenium, Spring Boot, REST APIs,
+        and software testing. Passionate about building reliable backend applications and
+        automation solutions.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">Projects</a>
+        <a href="#contact" class="btn primary">Contact</a>
+        <a href="Munwar_Resume.pdf" download class="btn primary">
+          <i class="fas fa-download"></i> Resume
+        </a>
+      </div>
+
+      <p class="tech-stack">Java • Spring Boot • Selenium • SQL • REST APIs</p>
+
+      <div class="hero-image">
+        <img src="a.jpg" alt="Munwar Ali Shaik" />
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/Munwaralishaik" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/munwar-ali-shaik-757639308" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:munwarshaik1723@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <div class="github-stats glass reveal">
+  <h2>Currently Working On</h2>
+
+  <div class="working-grid">
+    <div>Java Backend Development</div>
+    <div>Selenium Automation Testing</div>
+    <div>REST API Development</div>
+    <div>Responsive Portfolio Design</div>
+    <div>Spring Boot & SQL Projects</div>
+    <div>CortexChat AI Improvements</div>
+  </div>
+</div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title reveal">About Me</h2>
+    <p class="section-sub reveal">Professional Profile</p>
+
+    <div class="about-grid">
+      <div class="about-card glass reveal">
+        <h3>
+        <i class="fas fa-user"></i>
+        Profile
+      </h3>
+        <p>
+        I am an MCA graduate specializing in Big Data Analytics with
+        strong knowledge in Java, Spring Boot, SQL, Selenium,
+        REST APIs, and modern web technologies. Passionate about
+        building scalable backend systems, automation frameworks,
+        and AI-powered applications with clean and efficient code.
+        </p>
+      </div>
+
+      <div class="about-card glass reveal">
+        <h3>
+      <i class="fas fa-bullseye"></i>
+      Career Goal
+      </h3>
+        <p>
+
+        Focused on becoming a professional Software Development
+        Engineer in Test (SDET) and Backend Developer by developing
+        real-world applications, automation solutions, and cloud-ready
+        software systems with industry-standard practices.
+        </p>
+      </div>
+      <div class="about-card glass reveal">
+
+      <h3>
+        <i class="fas fa-lightbulb"></i>
+        Strengths
+      </h3>
+      
+      <p>
+      Strong problem-solving ability, quick learning mindset,
+      team collaboration, and passion for continuous improvement
+      in software development and automation technologies.
+      </p>
+    </div>
+     <div class="about-card glass reveal">
+    
+    <h3>
+      <i class="fas fa-user-graduate"></i>
+      Education
+    </h3>
+
+    <p>
+    Completed MCA in Big Data Analytics with practical exposure
+    to software development, machine learning, database systems,
+    and modern backend technologies.
+    
+    <br><br>
+    
+    Graduated in Mathematics, Statistics, and Computer Science,
+    building a strong foundation in logical thinking,
+    analytics, and programming concepts.
+    </p>
+    </div>
+
+    <div class="about-card glass reveal">
+     <h3>
+     <i class="fas fa-code"></i>
+       Development Focus
+       </h3>
+
+       <p>
+       Interested in backend engineering, automation testing,
+      AI-powered applications, scalable APIs, and modern
+      responsive UI development.
+      </p>
+      </div>
+</div>
+
+    <div class="stats">
+      <div class="stat glass reveal">
+        <h2>5+</h2>
+        <p>Projects</p>
+      </div>
+
+      <div class="stat glass reveal">
+        <h2>10+</h2>
+        <p>Technologies</p>
+      </div>
+
+      <div class="stat glass reveal">
+        <h2>3</h2>
+        <p>Certifications</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title reveal">Skills</h2>
+    <p class="section-sub reveal">Technologies & Tools</p>
+
+    <div class="skills-grid">
+      <div class="skill glass reveal"><i class="fab fa-java"></i><br><br>Java</div>
+      <div class="skill glass reveal"><i class="fab fa-python"></i><br><br>Python</div>
+      <div class="skill glass reveal"><i class="fas fa-database"></i><br><br>SQL</div>
+      <div class="skill glass reveal"><i class="fas fa-vial"></i><br><br>Selenium</div>
+      <div class="skill glass reveal"><i class="fas fa-leaf"></i><br><br>Spring Boot</div>
+      <div class="skill glass reveal"><i class="fas fa-plug"></i><br><br>REST APIs</div>
+      <div class="skill glass reveal"><i class="fas fa-paper-plane"></i><br><br>Postman</div>
+      <div class="skill glass reveal"><i class="fab fa-github"></i><br><br>GitHub</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+
+<section id="projects">
+
+  <h2 class="section-title reveal">
+    Projects
+  </h2>
+
+  <p class="section-sub reveal">
+    Featured Work
+  </p>
+
+  <div class="project-grid">
+
+    <!-- CORTEXCHAT -->
+
+    <div class="project glass reveal">
+
+      <div class="project-content">
+         <i class="fas fa-robot"></i>
+        <h3>CortexChat AI</h3>
+
+        <p>
+          AI-powered document intelligence platform that enables users
+          to upload PDFs, DOCX files, and text documents for intelligent
+          conversations using Retrieval-Augmented Generation (RAG).
+          Built with FastAPI backend architecture, secure OTP authentication,
+          vector search, and responsive modern UI deployment on Render.
+        </p>
+
+        <div class="tags">
+          <span>FastAPI</span>
+          <span>Python</span>
+          <span>RAG</span>
+          <span>FAISS</span>
+          <span>SQLite</span>
+          <span>Render</span>
+          <span>AI Chatbot</span>
+        </div>
+
+        <div class="project-buttons">
+          <a href="https://cortexchat-4.onrender.com" target="_blank">
+            Live Demo
+          </a>
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            GitHub
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HELICERT -->
+
+    <div class="project glass reveal">
+
+      <div class="project-content">
+
+        <i class="fas fa-shield-alt"></i>
+        <h3>Helicert</h3>
+        <p>
+          Blockchain-based credential verification system integrated
+          with machine learning models for helicopter tourism analytics
+          and secure verification.
+        </p>
+
+        <div class="tags">
+          <span>Python</span>
+          <span>XGBoost</span>
+          <span>Blockchain</span>
+        </div>
+
+        <div class="project-buttons">
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            Live Demo
+          </a>
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STUDENT RESULT -->
+
+    <div class="project glass reveal">
+
+      <div class="project-content">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Student Result Management System</h3>
+
+        <p>
+          Responsive academic result management system with
+          authentication and dynamic reporting functionalities.
+        </p>
+
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <div class="project-buttons">
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            Live Demo
+          </a>
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- AI CHATBOT -->
+
+    <div class="project glass reveal">
+
+      <div class="project-content">
+         <i class="fas fa-comments"></i>
+        <h3>AI Chat Bot</h3>
+
+        <p>
+          AI-powered chatbot application designed to process user queries
+          and generate intelligent responses using modern backend
+          technologies and responsive frontend design.
+        </p>
+
+        <div class="tags">
+          <span>Python</span>
+          <span>AI</span>
+          <span>Chatbot</span>
+          <span>Web App</span>
+        </div>
+
+        <div class="project-buttons">
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            Live Demo
+          </a>
+
+          <a href="https://github.com/Munwaralishaik" target="_blank">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <section id="experience">
+
+  <h2 class="section-title reveal">Experience</h2>
+  <p class="section-sub reveal">Journey & Learning</p>
+
+  <div class="timeline">
+
+    <div class="timeline-item glass reveal">
+
+      <h3>
+        <i class="fas fa-user-graduate"></i>
+        MCA – Big Data Analytics
+      </h3>
+
+      <span>2023 – 2025</span>
+
+      <p>
+        Specialized in Big Data Analytics with exposure to
+        software development, data processing, machine learning,
+        and backend application development.
+      </p>
+
+    </div>
+
+    <div class="timeline-item glass reveal">
+
+      <h3>
+        <i class="fas fa-award"></i>
+        IEEE Research Presentation
+      </h3>
+
+      <span>2025</span>
+
+      <p>
+        Presented Helicert research paper focused on blockchain-based
+        credential verification integrated with machine learning
+        analytics for secure tourism applications.
+      </p>
+
+    </div>
+
+    <div class="timeline-item glass reveal">
+
+      <h3>
+        <i class="fas fa-robot"></i>
+        CortexChat AI Development
+      </h3>
+
+      <span>2026</span>
+
+      <p>
+        Designed and developed an AI-powered document intelligence
+        platform using FastAPI, vector search, OTP authentication,
+        and responsive frontend deployment on Render cloud platform.
+      </p>
+
+    </div>
+
+    <div class="timeline-item glass reveal">
+
+      <h3>
+        <i class="fab fa-java"></i>
+        Java Full Stack Training
+      </h3>
+
+      <span>2025 – 2026</span>
+
+      <p>
+        Completed professional training in Core Java, J2EE,
+        SQL, Web Technologies, REST APIs, and backend development
+        with practical project implementation.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <section id="services">
+
+  <h2 class="section-title reveal">Services</h2>
+  <p class="section-sub reveal">What I Can Do</p>
+
+  <div class="services-grid">
+
+    <div class="service glass reveal">
+      <h3>
+        <i class="fab fa-java"></i>
+        Java Backend Development
+      </h3>
+
+      <p>
+        Developing scalable backend applications using Java,
+        Spring Boot, REST APIs, and SQL databases.
+      </p>
+    </div>
+
+    <div class="service glass reveal">
+      <h3>
+        <i class="fas fa-vial"></i>
+        Automation Testing
+      </h3>
+
+      <p>
+        Building Selenium automation frameworks for web testing,
+        regression testing, and QA workflows.
+      </p>
+    </div>
+
+    <div class="service glass reveal">
+      <h3>
+        <i class="fas fa-plug"></i>
+        REST API Development
+      </h3>
+
+      <p>
+        Creating secure and efficient REST APIs with authentication,
+        JSON processing, and database integration.
+      </p>
+    </div>
+
+    <div class="service glass reveal">
+      <h3>
+        <i class="fas fa-laptop-code"></i>
+        Responsive Web Design
+      </h3>
+
+      <p>
+        Designing modern responsive websites and portfolio
+        applications using HTML, CSS, and JavaScript.
+      </p>
+    </div>
+
+    <div class="service glass reveal">
+      <h3>
+        <i class="fas fa-database"></i>
+        Database Management
+      </h3>
+
+      <p>
+        Working with SQL databases for data storage,
+        query optimization, and backend integration.
+      </p>
+    </div>
+
+    <div class="service glass reveal">
+      <h3>
+        <i class="fas fa-chart-line"></i>
+        AI & Analytics Projects
+      </h3>
+
+      <p>
+        Building machine learning and analytics projects using Python,
+        data visualization, clustering, and predictive models.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+  <section id="achievements">
+    <h2 class="section-title reveal">Achievements</h2>
+    <p class="section-sub reveal">Academic & Technical Highlights</p>
+
+    <div class="achievement-grid">
+      <div class="achievement glass reveal">
+         <h3><i class="fab fa-java"></i>
+        Java Full Stack Training</h3>
+        <p> Successfully completed professional Java Full Stack
+            Development training at JSpiders covering Core Java,
+            J2EE, SQL, Web Technologies, and Frameworks with
+            practical development exposure.
+        </p>
+      </div>
+
+      <div class="achievement glass reveal">
+       <h3>
+      <i class="fas fa-trophy"></i>
+      IEEE Conference Paper
+      </h3>
+        <p>
+          Presented a research paper on Helicert — a blockchain-based
+          credential verification system integrated with machine learning.
+          Focused on secure digital verification and intelligent analytics
+          for helicopter tourism applications.
+        </p>
+      </div>
+
+      <div class="achievement glass reveal">
+        <h3><i class="fas fa-cloud"></i>
+        Cloud Computing Certification</h3>
+        <p>
+          Successfully completed NPTEL certification in Cloud Computing
+          with knowledge in cloud architecture, virtualization,
+          distributed systems, and cloud service models.
+        </p>
+      </div>
+
+      <div class="achievement glass reveal">
+        <h3> <i class="fas fa-chart-line"></i>
+        Big Data Analytics</h3>
+        <p>
+          Completed practical training in Big Data Analytics through
+          CODTECH, gaining experience in data processing,
+          visualization techniques, and analytics-based project development.
+        </p>
+      </div>
+      </div>
+  </section>
+
+  <section id="certifications">
+  <h2 class="section-title reveal">Certifications</h2>
+  <p class="section-sub reveal">Professional Learning</p>
+
+  <div class="cert-grid">
+
+    <div class="cert glass reveal">
+      <h3>
+        <i class="fab fa-java"></i>
+        Java Full Stack Development
+      </h3>
+
+      <p>
+        Completed professional Java Full Stack training at JSpiders covering:
+        <br><br>
+        • Core Java <br>
+        • J2EE <br>
+        • SQL <br>
+        • Web Technologies <br>
+        • Frameworks
+        <br><br>
+        <strong>Issued:</strong> February 2026
+      </p>
+    </div>
+
+    <div class="cert glass reveal">
+  <h3>
+    <i class="fas fa-cloud"></i>
+    Cloud Computing
+  </h3>
+
+  <p>
+    Successfully completed NPTEL Certification in
+    Cloud Computing covering:
+    
+    <br><br>
+
+    • Cloud Fundamentals <br>
+    • Virtualization <br>
+    • Distributed Systems <br>
+    • Cloud Service Models <br>
+    • Deployment Models
+
+    <br><br>
+
+    <strong>Issued:</strong> February 2025
+  </p>
+</div>
+
+<div class="cert glass reveal">
+  <h3>
+    <i class="fas fa-chart-line"></i>
+    Big Data Analytics
+  </h3>
+
+  <p>
+    Successfully completed CODTECH Certification in
+    Big Data Analytics covering:
+
+    <br><br>
+
+    • Data Processing <br>
+    • Data Visualization <br>
+    • Machine Learning Basics <br>
+    • Analytics Techniques <br>
+    • Python for Data Analytics
+
+    <br><br>
+
+    <strong>Issued:</strong> August 2025
+  </p>
+</div>
+  <div class="cert glass reveal">
+  <h3>
+    <i class="fas fa-award"></i>
+    IEEE Conference Presentation
+  </h3>
+  <p>
+    Presented the research paper titled
+    <strong>
+      “Helicert: Blockchain-Verified Credentials
+      for Helicopter Tourism”
+    </strong>
+    at the 3rd International Conference on
+    Inventive Computing and Informatics (ICICI 2025),
+    held in Bengaluru, Karnataka, India.
+    <br><br>
+    Focused on blockchain-based secure credential
+    verification integrated with intelligent analytics
+    for tourism applications.
+    <br><br>
+    <strong>Presented:</strong> June 2025
+  </p>
+
+</div>
+  </div>
+</section>
+
+  <section id="message">
+    <h2 class="section-title reveal">Send Message</h2>
+    <p class="section-sub reveal">Contact Me Directly</p>
+
+    <div class="contact-form glass reveal">
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title reveal">Contact</h2>
+    <p class="section-sub reveal">Let's Connect</p>
+
+    <div class="contact-card glass reveal">
+      <h3 style="color:#38bdf8;font-size:2rem;">Available For Opportunities</h3>
+
+     <p>
+  📧
+  <a href="mailto:munwarshaik1723@gmail.com" style="color:white;">
+    munwarshaik1723@gmail.com
+  </a>
+</p>
+
+<p>
+  📱
+  <a href="tel:+919063744184" style="color:white;">
+    +91 9063744184
+  </a>
+</p>
+<p>
+  💼
+  <a href="https://www.linkedin.com/in/munwar-ali-shaik-757639308"
+     target="_blank"
+     style="color:white;">
+     LinkedIn
+  </a>
+</p>
+      <p>📍 Chennai / Hyderabad</p>
+    </div>
+  </section>
+
+  <footer>
+    Crafted with Passion & Code 🚀<br>
+    Designed & Developed by Munwar © 2026
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script>
+    new Typed("#typed", {
+      strings: [
+        "Java Developer",
+        "Automation Engineer",
+        "Aspiring SDET",
+        "Backend Developer"
+      ],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+
+    const glow = document.createElement('div');
+    glow.classList.add('cursor-glow');
+    document.body.appendChild(glow);
+
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#bg'),
+      alpha: true
+    });
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    camera.position.setZ(30);
+
+    const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+
+    const material = new THREE.MeshStandardMaterial({
+      color: 0x38bdf8,
+      wireframe: true
+    });
+
+    const torus = new THREE.Mesh(geometry, material);
+    scene.add(torus);
+
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(20, 20, 20);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(pointLight, ambientLight);
+
+    function addStar() {
+      const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+      const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+      const star = new THREE.Mesh(geometry, material);
+
+      const [x, y, z] = Array(3).fill().map(() =>
+        THREE.MathUtils.randFloatSpread(200)
+      );
+
+      star.position.set(x, y, z);
+      scene.add(star);
+    }
+
+    Array(200).fill().forEach(addStar);
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      torus.rotation.x += 0.002;
+      torus.rotation.y += 0.003;
+      torus.rotation.z += 0.002;
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    function reveal() {
+      const reveals = document.querySelectorAll('.reveal');
+
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    window.addEventListener('resize', () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    });
+  </script>
+</body>
+</html>
